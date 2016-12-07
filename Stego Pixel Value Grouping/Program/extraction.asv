@@ -1,0 +1,17 @@
+function [pixel, message] = extraction(stegoPixel, locationMap)
+
+group = zeros(0);
+pixel = zeros(0);
+
+for i = 1:length(locationMap)
+    if locationMap(i) == 5
+        message = [message;stegoPixel(i)];
+        pixel = [pixel;0];
+    elseif locationMap(i) == 4
+        pixel = [pixel;stegoPixel(i)];
+    elseif locationMap(i) == 0
+        if (isempty(group) == 1)
+    end
+end
+
+end
