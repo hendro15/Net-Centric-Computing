@@ -34,8 +34,8 @@ for i = 1:length(histogram)
                                 newHistogram(i - length(groupMatx)) = f;
                                 locationMap(i - (length(groupMatx)),1) = 0;
                             else
-                                [newHistogram(i - ((length(groupMatx))-1)), lm] = coreEmbedProcess(f, groupMatx(z), message(u));
-                                locationMap(i - ((length(groupMatx))-1),1) = lm;
+                                [newHistogram(i - ((length(groupMatx))+1 -z)), lm] = coreEmbedProcess(f, groupMatx(z), message(u));
+                                locationMap(i - (length(groupMatx)+1 -z)) = lm;
                                 u = u + 1;
                             end
                         end
@@ -54,8 +54,8 @@ for i = 1:length(histogram)
                             newHistogram(i - length(groupMatx)) = f;
                             locationMap(i - (length(groupMatx)),1) = 0;
                         else
-                            [newHistogram(i - ((length(groupMatx))-1)), lm] = coreEmbedProcess(f, groupMatx(z), message(u));
-                            locationMap(i - ((length(groupMatx))-1),1) = lm;
+                            [newHistogram(i - ((length(groupMatx))+1-z)), lm] = coreEmbedProcess(f, groupMatx(z), message(u));
+                            locationMap(i - ((length(groupMatx))-z+1),1) = lm;
                             u = u + 1;
                         end
                     end
@@ -75,8 +75,8 @@ for i = 1:length(histogram)
                     newHistogram(i - length(groupMatx)) = f;
                     locationMap(i - (length(groupMatx)),1) = 0;
                 else
-                    [newHistogram(i - ((length(groupMatx))-1)), lm] = coreEmbedProcess(f, groupMatx(z), message(u));
-                    locationMap(i - ((length(groupMatx))-1),1) = lm;
+                    [newHistogram(i - ((length(groupMatx))-z+1)), lm] = coreEmbedProcess(f, groupMatx(z), message(u));
+                    locationMap(i - ((length(groupMatx))-z+1),1) = lm;
                     u = u + 1;
                 end
             end
